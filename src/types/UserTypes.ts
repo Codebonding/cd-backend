@@ -4,6 +4,8 @@ export interface UserInput {
   phone: string;
   passedOutYear?: number;
   address?: string;
+  department?: string;
+  degree?: string;
   district?: string;
   state?: string;
   pinCode?: string;
