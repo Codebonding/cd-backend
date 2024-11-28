@@ -42,7 +42,7 @@ const registerUser = async (userData: UserInput): Promise<any> => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "codebodning@gmail.com",
+        user: "codebonding@gmail.com",
         pass: process.env.GPASSKEY,
       },
     });
