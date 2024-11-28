@@ -11,6 +11,3 @@ export interface UserInput {
   pinCode?: string;
 }
 
-export interface UserOutput extends UserInput {
-  id: number;
-}

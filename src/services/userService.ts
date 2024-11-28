@@ -1,8 +1,8 @@
 import UserRepository from "repo/userRepository";
-import { UserOutput } from "../types/UserTypes";
 import { UserInput } from "../types/UserTypes";
+import nodemailer from "nodemailer";
 
-const registerUser = async (userData: UserInput): Promise<UserOutput> => {
+const registerUser = async (userData: UserInput): Promise<any> => {
   const {
     name,
     email,
@@ -36,10 +36,35 @@ const registerUser = async (userData: UserInput): Promise<UserOutput> => {
     pinCode,
   };
 
-  return await UserRepository.saveUser(user);
+  const result = await UserRepository.saveUser(user);
+  if (result) {
+    // const transporter = nodemailer.createTransport({
+    //   service: "gmail",
+    //   auth: {
+    //     user: "codebodning@gmail.com",
+    //     pass: "",
+    //   },
+    // });
+    // const mailOptions = {
+    //   from: "codebodning@gmail.com",
+    //   to: email,
+    //   subject: "Welcome to Our Service!",
+    //   html: `
+        
+    //   `,
+    // };
+    // try {
+    //   await transporter.sendMail(mailOptions);
+    //   console.log(`Welcome email sent to ${email}`);
+    // } catch (error) {
+    //   console.error("Error sending welcome email:", error);
+    //   throw new Error("Failed to send welcome email.");
+    // }
+    return result;
+  }
 };
 
-const getAllUsers = async (): Promise<UserOutput[]> => {
+const getAllUsers = async (): Promise<any> => {
   return await UserRepository?.findAllUsers();
 };
 
