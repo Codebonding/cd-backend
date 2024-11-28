@@ -1,4 +1,4 @@
-import UserRepository from "repo/userRepository";
+import UserRepository from "../repo/userRepository";
 import { UserInput } from "../types/UserTypes";
 import nodemailer from "nodemailer";
 import "dotenv/config";
