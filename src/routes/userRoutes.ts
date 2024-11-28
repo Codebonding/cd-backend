@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import userService from "../services/userService";
-import middleware from "helper/middleware";
-import { userSchema } from "helper/schema/registerUserSchema";
+import middleware from "../helper/middleware";
+import { userSchema } from "../helper/schema/registerUserSchema";
 
 const router = express.Router();
 
