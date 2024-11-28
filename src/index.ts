@@ -1,8 +1,7 @@
 import express from "express";
-import { AppDataSource } from "./src/data-source";
-import userRoutes from "./src/routes/userRoutes";
+import { AppDataSource } from "./data-source";
+import userRoutes from "./routes/userRoutes";
 import cors from "cors"; // Import the CORS package
-
 
 const app = express();
 const PORT = 3000;
