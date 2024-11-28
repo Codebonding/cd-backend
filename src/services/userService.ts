@@ -1,6 +1,7 @@
 import UserRepository from "repo/userRepository";
 import { UserInput } from "../types/UserTypes";
 import nodemailer from "nodemailer";
+import "dotenv/config";
 
 const registerUser = async (userData: UserInput): Promise<any> => {
   const {
@@ -42,7 +43,7 @@ const registerUser = async (userData: UserInput): Promise<any> => {
       service: "gmail",
       auth: {
         user: "codebodning@gmail.com",
-        pass: "",
+        pass: process.env.GPASSKEY,
       },
     });
     const mailOptions = {
