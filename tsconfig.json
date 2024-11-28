@@ -14,7 +14,7 @@
       "repo/*": ["./repo/*"]
     },
    },
-   "include": ["src/**/*", "src/index.ts"],
+"include": ["src/**/*"],
    "exclude": ["node_modules"]
  }
  
