@@ -16,12 +16,13 @@ const registerUser = async (userData: UserInput): Promise<UserOutput> => {
     pinCode,
   } = userData;
 
-  // Validate required fields
   if (!name || !email || !phone) {
     throw new Error("Name, Email, and Phone are required fields.");
   }
-
-  // Create the user object
+  const existingUser = await UserRepository.findUser(email, phone);
+  if (existingUser) {
+    throw new Error("User with the same email or phone already exists.");
+  }
   const user = {
     name,
     email,
@@ -35,12 +36,10 @@ const registerUser = async (userData: UserInput): Promise<UserOutput> => {
     pinCode,
   };
 
-  // Save the user and return the result
-  return await UserRepository?.saveUser(user);
+  return await UserRepository.saveUser(user);
 };
 
 const getAllUsers = async (): Promise<UserOutput[]> => {
-  // Retrieve all users from the repository
   return await UserRepository?.findAllUsers();
 };
 

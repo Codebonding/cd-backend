@@ -12,6 +12,13 @@ const UserRepository = {
   findAllUsers: async (): Promise<UserOutput[]> => {
     return await AppDataSource.manager.find(User);
   },
+
+  findUser: async (email: string, phone: string): Promise<User | null> => {
+    return await AppDataSource.createQueryBuilder(User, "user")
+      .where("user.email = :email", { email })
+      .orWhere("user.phone = :phone", { phone })
+      .getOne();
+  },
 };
 
 export default UserRepository;
