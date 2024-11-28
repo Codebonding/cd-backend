@@ -11,10 +11,10 @@
      "resolveJsonModule": true,
      "baseUrl": "./src",
     "paths": {
-      "repo/*": ["./repo/*"]
+      "*": ["*"]
     },
    },
-"include": ["src/**/*", "index.ts"],
+   "include": ["src/**/*", "index.ts"],
    "exclude": ["node_modules"]
  }
  
