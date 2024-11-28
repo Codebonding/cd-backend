@@ -11,7 +11,7 @@
      "resolveJsonModule": true,
      "baseUrl": "./src",
     "paths": {
-      "*": ["*"]
+      "repo/*": ["./repo/*"]
     },
    },
    "include": ["src/**/*", "src/index.ts"],
