@@ -162,6 +162,11 @@ const registerUser = async (userData: UserInput): Promise<any> => {
                 <li>Placement Assistance and Career Guidance</li>
             </ul>
             <p>We are committed to providing you with the best learning experience and the skills you need to excel. Our team will guide and support you at every step of your journey.</p>
+
+            <h3>Terms and Conditions</h3>
+            <p>Please download the document, sign it E-signature , and then resend it to the CodeBonding email address.</p>
+            <p><a href="https://docs.google.com/document/d/1W9I9yi6VoPF9P7gq2-nNXDuQq9XTISEN99dCeUOkwL4/edit?usp=sharing" class="btn">Download and Sign the Document</a></p>
+			Please re-register on our website.
             <p><a href="https://www.codebonding.com" class="btn">Access Your Website</a></p>
             <p>If you have any questions, feel free to reach us at <a href="mailto:codebonding@gmail.com">codebonding@gmail.com</a>.</p>
             <p>Welcome aboard, and let's start building your future!</p>
@@ -172,7 +177,8 @@ const registerUser = async (userData: UserInput): Promise<any> => {
         </div>
     </div>
 </body>
-</html>`,
+</html>
+`,
     };
     try {
       await transporter.sendMail(mailOptions);
