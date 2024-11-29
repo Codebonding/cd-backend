@@ -14,7 +14,6 @@ app.get("/", (req, res) => {
 });
 app.use("/users", userRoutes);
 
-// Initialize database and start server
 AppDataSource.initialize()
   .then(() => {
     console.log("Data Source has been initialized!");
