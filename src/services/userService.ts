@@ -165,7 +165,7 @@ const registerUser = async (userData: UserInput): Promise<any> => {
 
             <h3>Terms and Conditions</h3>
             <p>Please download the document, sign it E-signature , and then resend it to the CodeBonding email address.</p>
-            <p><a href="https://docs.google.com/document/d/1W9I9yi6VoPF9P7gq2-nNXDuQq9XTISEN99dCeUOkwL4/edit?usp=sharing" class="btn">Download and Sign the Document</a></p>
+            <p><a href="https://drive.google.com/file/d/16nCMCKrV79iG2NCiL-BoEAM5nu3vXNY2/view?usp=sharing" class="btn">Download and Sign the Document</a></p>
 			Please re-register on our website.
             <p><a href="https://www.codebonding.com" class="btn">Access Your Website</a></p>
             <p>If you have any questions, feel free to reach us at <a href="mailto:codebonding@gmail.com">codebonding@gmail.com</a>.</p>
