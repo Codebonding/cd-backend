@@ -4,13 +4,31 @@ import { AppDataSource } from "../data-source";
 export const companyRepository = {
   async create(companyData: Partial<Company>) {
     const repository = AppDataSource.getRepository(Company);
+
+    const count = await repository.count();
+
+    if (count >= 15) {
+      const oldestRecord = await repository.find({
+        order: { createdAt: "ASC" },
+        take: 1,
+      });
+
+      if (oldestRecord.length > 0) {
+        await repository.remove(oldestRecord[0]);
+      }
+    }
+
     const company = repository.create(companyData);
     return await repository.save(company);
   },
 
   async findAll() {
     const repository = AppDataSource.getRepository(Company);
-    return await repository.find();
+    return await repository.find({
+      order: {
+        createdAt: "DESC",
+      },
+    });
   },
 
   async findById(id: string) {
@@ -22,7 +40,6 @@ export const companyRepository = {
     const repository = AppDataSource.getRepository(Company);
     await repository.update(id, companyData);
 
-    // Ensure a valid Company object is always returned
     const updatedCompany = await repository.findOne({ where: { id } });
     if (!updatedCompany) {
       throw new Error(`Company with ID ${id} not found after update`);
